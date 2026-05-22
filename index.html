@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,13 +6,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gain Valuable Solution</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<meta name="description" content="Gain Valuable Solution provides Gym, School, ERP, and Hospital Management Software for modern businesses.">
+
+<meta name="keywords" content="ERP Software Chennai, School Management Software, Gym Software, Hospital Management System">
+
+<meta name="author" content="Gain Valuable Solution">
+
+
+
 <style>
 body {
     margin: 0;
     padding-top: 90px;
-    font-family: 'Segoe UI', sans-serif;
-    background: #ffffff;
-    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top left, rgba(79,124,255,0.25), transparent 30%),radial-gradient(circle at bottom right, rgba(106,92,255,0.25), transparent 30%), linear-gradient(to bottom, #0b1020, #11162a);
+    color: white;
+
     overflow-x: hidden;
 }
 
@@ -21,9 +36,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    background: #ffffff;
-    border-bottom: 1px solid #eee;
+
+    padding: 18px 40px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 
 
@@ -33,6 +50,7 @@ body {
     width: 100%;
     box-sizing: border-box;   /* ⭐ THIS FIXES EVERYTHING */
     z-index: 1000;
+    transition: all 0.3s ease
 }
 
 /* LOGO SECTION */
@@ -60,13 +78,14 @@ body {
 }
 
 /* NAV LINKS */
+   
 .nav-links a {
-    color: #333;
+    color: #1f2937;
     text-decoration: none;
     margin-left: 20px;
-    font-weight: 500;
-    white-space: nowrap;   /* prevents breaking */
-   
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
@@ -75,8 +94,8 @@ body {
 
 /* Icon */
 .icon {
-    font-size: 40px;
-    margin-bottom: 15px;
+    font-size: 52px;
+    margin-bottom: 20px;
 }
 
 /* scroll behaviour */
@@ -89,32 +108,47 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 60px 40px;
-    min-height: 80vh;
+    padding: 80px 40px;
+    min-height: 100vh;
     gap: 40px;
-    background: linear-gradient(to right, #f8faff, #ffffff);
+    position: relative;
+    background: transparent;
 }
 
 /* LEFT CONTENT */
 .hero-left {
     flex: 1;
+    max-width: 650px;
+
 }
 
 .hero h1 {
-    font-size: 48px;
-    line-height: 1.2;
-    animation: fadeUp 1s ease forwards;
+    font-size: clamp(48px, 8vw, 72px);
+    line-height: 1.05;
+    font-weight: 800;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #8ab4ff,
+        #b892ff
+	);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-left p {
     margin: 20px 0;
-    color: #555;
+    color: rgba(255,255,255,0.72);
     font-size: 18px;
     animation: fadeUp 1.2s ease forwards;
+    max-width: 650px;
 }
 
 .hero p {
-    color: #555;
+    color: rgba(255,255,255,0.72);
     margin: 20px 0;
     font-size: 18px;
 }
@@ -133,18 +167,42 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+
     flex: 1;
+
+    position: relative;
+}
+
+.hero-right::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(79,124,255,0.35),
+        transparent 70%
+    );
+
+    filter: blur(50px);
+
+    z-index: -1;
 }
 
 .secondary-btn {
-    background: transparent;
-    border: 1px solid #4f7cff;
-    color: #4f7cff;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
     margin-left: 10px;
+    color: white;
+    
 }
 
 .secondary-btn:hover {
-    background: #4f7cff;
+    background: rgba(255,255,255,0.12);
     color: #fff;
 }
 
@@ -153,9 +211,16 @@ html {
     display: flex;
     gap: 25px;
     font-size: 14px;
-    color: #555;
+    color: rgba(255,255,255,0.7);
     animation: fadeUp 1.6s ease forwards;
 
+}
+
+.hero,
+.section,
+.navbar {
+    max-width: 1400px;
+    margin: auto;
 }
 
 
@@ -187,20 +252,43 @@ html {
 }
 
 .btn {
-    background: linear-gradient(135deg, #4f7cff, #6a5cff);
-    padding: 12px 25px;
-    border-radius: 8px;
+    background: linear-gradient(135deg,#4f7cff,#6a5cff,#8b5cf6);
+    background-size: 200% 200%;
+    animation: gradientMove 5s ease infinite;
+
+    padding: 14px 28px;
+    border-radius: 14px;
     color: white;
     text-decoration: none;
     display: inline-block;
-    transition: 0.3s;
-    font-weight: 500;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
 }
+
+.card-btn {
+    cursor: pointer;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: left;
+    }
+
+    50% {
+        background-position: right;
+    }
+
+    100% {
+        background-position: left;
+    }
+}
+
 /* button hover */
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 .hero-right img {
@@ -219,10 +307,52 @@ html {
 
 /* SECTION */
 .section {
-    padding: 80px 60px;
+    padding: 120px 80px;
+    position: relative;
 }
 .section h2 {
-    margin-bottom: 40px;
+    font-size: 42px;
+    margin-bottom: 60px;
+}
+
+.section h2::after {
+    content: "";
+
+    display: block;
+
+    width: 80px;
+    height: 4px;
+
+    margin-top: 15px;
+
+    border-radius: 10px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #4f7cff,
+        #6a5cff
+    );
+}
+
+.section::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+    linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.08),
+        transparent
+    );
 }
 
 /* GRID */
@@ -233,17 +363,60 @@ html {
 }
 
 /* CARD */
+
 .card {
-    background: #f9fafc;
-    padding: 25px;
-    border-radius: 10px;
-    border: 1px solid #eee;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(14px);
+
+    padding: 30px;
+    border-radius: 24px;
+
+    transition: all 0.35s ease;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.7;
+    color: rgba(255,255,255,0.72);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(79,124,255,0.4);
+    box-shadow: 0 20px 40px rgba(79,124,255,0.15);
+}
+
+.card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,0.08),
+        transparent
+    );
+
+    opacity: 0;
+
     transition: 0.3s;
 }
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+.card:hover::before {
+    opacity: 1;
 }
+
+
 /* CARD BUTTON */
 .card-btn {
     display: inline-block;
@@ -267,6 +440,7 @@ html {
 
 .card:hover {
     transform: translateY(-8px) scale(1.02);
+    background: rgba(255,255,255,0.08);
 }
 
 .btn:active {
@@ -284,10 +458,12 @@ html {
 
 /* FOOTER */
 .footer {
-    padding: 40px;
+    padding: 60px;
     text-align: center;
-    color: #777;
-    border-top: 1px solid #eee;
+    color: rgba(255,255,255,0.7);   
+    background: rgba(255,255,255,0.04);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
 }
 
 /* RESPONSIVE */
@@ -319,6 +495,36 @@ html {
     }
 }
 
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+    }
+}
+
+@keyframes blobMove {
+
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(40px);
+    }
+}
+
 /* CONTACT SECTION */
 .contact-container {
     display: flex;
@@ -337,7 +543,8 @@ html {
 
 .contact-info p {
     margin: 10px 0;
-    color: #555;
+    color: rgba(255,255,255,0.72);
+
 }
 
 /* RIGHT SIDE FORM */
@@ -350,11 +557,20 @@ html {
 
 .contact-form input,
 .contact-form textarea {
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #ddd;
+    padding: 14px;
+    border-radius: 12px;
     font-size: 14px;
     font-family: inherit;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: white;
+    backdrop-filter: blur(10px);
+
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255,255,255,0.5);
 }
 
 .contact-form input:focus,
@@ -392,6 +608,64 @@ html {
     text-decoration: none;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
+.bg-blur {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    animation: floatBlur 10s ease-in-out infinite;
+
+}
+
+@keyframes floatBlur {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.blur1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(79,124,255,0.3);
+
+    top: -100px;
+    left: -100px;
+}
+
+.blur2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(106,92,255,0.3);
+
+    bottom: -100px;
+    right: -100px;
+}
+
+body {
+    animation: pageLoad 1s ease;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: scale(1.01);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 
 </style>
 </head>
@@ -436,11 +710,6 @@ html {
             <a href="#products" class="btn secondary-btn">Explore Products</a>
         </div>
 
-        <div class="hero-points">
-            <span>✔ Easy to Use</span>
-            <span>✔ Secure</span>
-            <span>✔ Affordable</span>
-        </div>
     </div>
 
     <div class="hero-right">
@@ -450,33 +719,40 @@ html {
 </section>
 
 <!-- PRODUCTS -->
-<section id="products" class="section">
+<section id="products" class="section" data-aos="fade-up">
+
     <h2>Our Solutions</h2>
+
     <div class="grid">
-        <div class="card">
-	    <div class="icon">🏋️</div>
+
+        <div class="card" data-aos="zoom-in">
+            <div class="icon">🏋️</div>
             <h3>Gym Management</h3>
             <p>Track members, payments, and attendance easily.</p>
-	    <a href="#" class="card-btn">Learn More</a>
+            <a href="#" class="card-btn">Learn More</a>
         </div>
-        <div class="card">
-	    <div class="icon">🎓</div>
+
+        <div class="card" data-aos="zoom-in">
+            <div class="icon">🎓</div>
             <h3>School Management</h3>
             <p>Manage students, fees, exams, and communication.</p>
-	    <a href="#" class="card-btn">Learn More</a>
+            <a href="#" class="card-btn">Learn More</a>
         </div>
-        <div class="card">
-	    <div class="icon">🏢</div>
+
+        <div class="card" data-aos="zoom-in">
+            <div class="icon">🏢</div>
             <h3>ERP System</h3>
             <p>Integrate finance, HR, and operations in one place.</p>
-	    <a href="#" class="card-btn">Learn More</a>
+            <a href="#" class="card-btn">Learn More</a>
         </div>
-        <div class="card">
-	    <div class="icon">🏥</div>
+
+        <div class="card" data-aos="zoom-in">
+            <div class="icon">🏥</div>
             <h3>Hospital Management Software</h3>
             <p>Comprehensive system to manage patients, appointments, billing, and healthcare operations.</p>
- 	    <a href="#" class="card-btn">Learn More</a>
+            <a href="#" class="card-btn">Learn More</a>
         </div>
+
     </div>
 </section>
 
@@ -517,7 +793,7 @@ html {
 
     	<!-- Hidden fields -->
    	 <input type="hidden" name="_subject" value="New Contact Form Submission">
-   	 <input type="hidden" name="_redirect" value="thankyou.html">
+	 <input type="hidden" name="_next" value="thankyou.html">
      	 <input type="text" name="_gotcha" style="display:none">
 
    	 <button type="submit" class="btn">Send Message</button>
@@ -529,7 +805,16 @@ html {
 
 <!-- FOOTER -->
 <div class="footer">
-    © 2026 Gain Valuable Solution. All rights reserved.
+    <h3> © 2026 Gain Valuable Solution. All rights reserved.</h3>
+
+    <p>
+        Smart Software Solutions for Modern Businesses
+    </p>
+
+    <p>
+        Chennai, Tamil Nadu, India
+    </p>
+
 </div>
 
 <script>
@@ -542,7 +827,31 @@ form.addEventListener("submit", function() {
 });
 </script>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration: 1000,
+    once: true
+});
+</script>
+
 <a href="https://wa.me/916374977446" class="whatsapp-btn" target="_blank">💬</a>
+
+<div class="bg-blur blur1"></div>
+<div class="bg-blur blur2"></div>
+<script>
+window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+
+    if(window.scrollY > 50){
+        navbar.style.background = "#ffffff";
+    } else {
+        navbar.style.background = "#ffffff";
+    }
+});
+</script>
+
 
 </body>
 </html>
